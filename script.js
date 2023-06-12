@@ -1,12 +1,6 @@
 //ts-check
 
 /**
- * checks the data-attribute inside the html for forms and results whenever the function runs
- * @returns {object} 
- */
-
-
-/**
  * searchs the data-form attribute found in the html
  * @param {HTMLElement} form - inspects the data-form attribute 
  */ 
@@ -26,11 +20,12 @@ form.addEventListener("submit", (event) => {
   if(!dividend || !divider){  
     result.innerText = "Division not performed. Both values are required in inputs. Try again";
   }else if(dividend < 0 || divider < 0){
-    result.innertext = "Division not performed. Invalid number provided. Try again";
-    
+    result.innerText = "Division not performed. Invalid number provided. Try again";
+    throw new Error (" ");
   }else if(dividend === "yolo" && divider === "+++"){
-    
-    
+      document.body.innerHTML = /*html*/ `
+      Something critical went wrong. Please reload the page
+      `;
   }else{
     result.innerText = parseFloat(Math.floor(dividend / divider));
   }
